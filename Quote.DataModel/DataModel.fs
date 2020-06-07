@@ -2,15 +2,15 @@
 
 open System
 
-type UserId = private UserId of int with
+type UserId = private UserId of int64 with
     static member ofInt i = i |> UserId
     member __.asInt = match __ with UserId u -> u
-    static member zero = 0 |> UserId
+    static member zero = 0L |> UserId
     
-type QuoteId = private QuoteId of int with
+type QuoteId = private QuoteId of int64 with
     static member ofInt i = i |> QuoteId
     member __.asInt = match __ with QuoteId q -> q
-    static member zero = 0 |> QuoteId
+    static member zero = 0L |> QuoteId
 
 
 type User = {
